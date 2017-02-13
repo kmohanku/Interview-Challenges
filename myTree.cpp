@@ -16,6 +16,7 @@ void addNode(Node*, int);       //Function to add a node
 string nodeSearch(Node*, int);  //Function to search for a node's presence
 void traversePreorder(Node*);   //Function to print the Pre-Order Traversal Path
 int getHeightInfo(Node*);       //Getting Height Information
+~Node();			//Destructor
 };
 
 
@@ -92,6 +93,10 @@ int Node::getValue(){ //Getter function. Not used
  return value;
  }
 
+Node::~Node(){
+  delete(left);
+  delete(right);
+}
 
 int main(){
 
@@ -139,7 +144,8 @@ case 4: cout << "Height is: " << root->getHeightInfo(root) << endl;
 	cout << endl;
 	break;
 
-default: exit(0);  
+default: root->~Node(); //Destruct and exit
+	 exit(0);  
 }
 }
 }
