@@ -9,7 +9,7 @@
 using namespace std;
 
 int findtripletseats(int N, string& reserved_seats){
-  vector< vector<char> > tracker(N, vector<char>());
+  vector< vector<char> > tracker(N, vector<char>(10));
   string parser;
   int seat_count = 0;
 
